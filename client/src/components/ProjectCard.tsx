@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Folder } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -8,10 +9,11 @@ interface ProjectCardProps {
   tags: string[];
   link?: string;
   github?: string;
+  imageUrl?: string;
   index: number;
 }
 
-export default function ProjectCard({ title, description, tags, link, github, index }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tags, link, github, imageUrl, index }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -20,43 +22,57 @@ export default function ProjectCard({ title, description, tags, link, github, in
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative bg-card border border-border hover:border-primary/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 flex flex-col h-full"
     >
-      <div className="p-8 flex flex-col flex-grow h-full">
-        <div className="flex justify-between items-start mb-6">
-          <div className="p-3 bg-primary/10 rounded-xl text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-            <Folder className="w-6 h-6" />
+      {/* Project Image Header */}
+      <div className="h-48 w-full relative overflow-hidden bg-secondary/20">
+        {imageUrl ? (
+          <img 
+            src={imageUrl} 
+            alt={title} 
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center">
+            <Folder className="w-12 h-12 text-primary/40" />
           </div>
-          <div className="flex gap-3">
-            {github && (
-              <a href={github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-white transition-colors">
-                <Github className="w-5 h-5" />
-              </a>
-            )}
-            {link && (
-              <a href={link} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <ExternalLink className="w-5 h-5" />
-              </a>
-            )}
-          </div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+        
+        <div className="absolute top-4 right-4 flex gap-2">
+          {github && (
+            <a href={github} target="_blank" rel="noopener noreferrer" className="p-2 bg-background/80 backdrop-blur-sm rounded-full text-muted-foreground hover:text-white hover:bg-primary transition-colors shadow-lg">
+              <Github className="w-4 h-4" />
+            </a>
+          )}
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="p-2 bg-background/80 backdrop-blur-sm rounded-full text-muted-foreground hover:text-white hover:bg-primary transition-colors shadow-lg">
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          )}
         </div>
+      </div>
 
-        <h3 className="text-2xl font-bold font-display mb-3 group-hover:text-primary transition-colors">
+      <div className="p-6 flex flex-col flex-grow h-full">
+        <h3 className="text-xl font-bold font-display mb-3 group-hover:text-primary transition-colors line-clamp-1">
           {title}
         </h3>
         
-        <p className="text-muted-foreground leading-relaxed mb-6 flex-grow">
+        <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow line-clamp-4">
           {description}
         </p>
 
         <div className="flex flex-wrap gap-2 mt-auto">
-          {tags.map((tag) => (
+          {tags.slice(0, 4).map((tag) => (
             <Badge 
               key={tag} 
               variant="secondary" 
-              className="bg-secondary/50 text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors"
+              className="bg-secondary/50 text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors text-xs"
             >
               {tag}
             </Badge>
           ))}
+          {tags.length > 4 && (
+            <Badge variant="secondary" className="bg-secondary/30 text-xs">+{tags.length - 4}</Badge>
+          )}
         </div>
       </div>
       

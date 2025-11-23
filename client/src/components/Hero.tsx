@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Database, Code, BarChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import generatedImage from '@assets/generated_images/abstract_data_science_background.png';
+import portraitImg from '@assets/generated_images/professional_portrait_background_data_science.png';
 
 export default function Hero() {
   return (
@@ -10,12 +10,12 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src={generatedImage} 
+          src={portraitImg} 
           alt="Data Science Background" 
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -36,13 +36,21 @@ export default function Hero() {
             Hi, I'm <span className="text-gradient-primary">Alfred Mulinge Maweu</span>
           </h1>
           
-          <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
+          <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 font-mono">
             Data Analyst | AI & Innovation Consultant | Full-Stack Developer
           </h2>
           
-          <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-            Innovative data analyst and full-stack developer building enterprise-grade applications and delivering data-driven strategic insights. Specialized in productivity analytics, AI-powered platforms, and blockchain solutions.
-          </p>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="p-6 bg-secondary/20 border-l-4 border-primary rounded-r-lg backdrop-blur-sm mb-8 max-w-xl"
+          >
+            <h3 className="text-lg font-bold mb-2 text-foreground">Professional Summary</h3>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              Innovative data analyst, AI consultant, and full-stack developer with extensive experience building enterprise-grade applications and delivering data-driven strategic insights. Specialized in productivity analytics, AI-powered platforms, blockchain solutions, and quantitative research.
+            </p>
+          </motion.div>
           
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12 text-base shadow-lg shadow-primary/25 transition-all hover:scale-105" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth'})}>
