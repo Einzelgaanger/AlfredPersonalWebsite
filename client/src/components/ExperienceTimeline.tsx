@@ -79,6 +79,68 @@ const experiences: ExperienceItem[] = [
       "Developed intelligent matching algorithm connecting investors with founders based on aligned investment goals.",
       "Worked under mentorship of Senior Developers gaining advanced algorithm design experience."
     ]
+  },
+  {
+    role: "Financial Consultant and Motivational Speaker",
+    company: "Growth to Mathare City Movement",
+    period: "March 2024 - Present",
+    description: [
+      "Delivered financial literacy workshops empowering community members with practical money management skills.",
+      "Conducted motivational speeches inspiring youth development and entrepreneurship."
+    ]
+  },
+  {
+    role: "Mentee of Dr. Karanja Gacuca",
+    company: "Wall Street Data Analyst Coaching",
+    period: "February 2025 - March 2025",
+    description: [
+      "Handpicked for exclusive one-on-one mentorship based on exemplary analytical reporting.",
+      "Developed advanced analytics frameworks, decision-making methodologies, and executive presentation skills."
+    ]
+  },
+  {
+    role: "Data Analyst Intern",
+    company: "Enkaare",
+    period: "February 2025 - March 2025",
+    description: [
+      "Developed talent matching algorithms optimizing recruitment efficiency.",
+      "Created data-driven marketing strategy through comprehensive market research and competitive analysis."
+    ]
+  },
+  {
+    role: "Data Analyst (Short-Term Consulting)",
+    company: "USAID | ACDI/VOCA | RLA",
+    period: "January 2025 - February 2025",
+    description: [
+      "Cleaned and structured large humanitarian datasets supporting Russia-Ukraine conflict analysis.",
+      "Conducted research and exploratory analysis informing UN economic recovery strategies."
+    ]
+  },
+  {
+    role: "Crypto Economics Intern",
+    company: "Black Panther TKN",
+    period: "January 2025 - March 2025",
+    description: [
+      "Gained exposure to crypto project business operations and tokenomics design.",
+      "Contributed mathematical modeling insights during strategic planning sessions."
+    ]
+  },
+  {
+    role: "Volunteer Research Note Taker",
+    company: "MIT Kuo Sharper Currency Volatility Center",
+    period: "2025",
+    description: [
+      "Documented detailed research discussions supporting currency volatility trend analysis."
+    ]
+  },
+  {
+    role: "Award-Winning Data Analyst",
+    company: "iLab Africa",
+    period: "October 2024 - November 2024",
+    description: [
+      "Delivered top-ranked analysis of Kenya food prices dataset, recognized for analytical depth and accuracy.",
+      "Applied advanced statistical modeling, data visualization, R programming, and LaTeX documentation."
+    ]
   }
 ];
 

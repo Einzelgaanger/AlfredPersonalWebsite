@@ -14,6 +14,10 @@ import aiNetworkImg from '@assets/generated_images/abstract_ai_network_visualiza
 import blockchainImg from '@assets/generated_images/blockchain_technology_concept.png';
 import dashboardImg from '@assets/generated_images/data_analytics_dashboard_concept.png';
 import portraitImg from '@assets/generated_images/professional_portrait_background_data_science.png';
+import foodPriceImg from '@assets/generated_images/food_price_econometrics_graph.png';
+import studentPlatformImg from '@assets/generated_images/student_education_platform_ui.png';
+import smeAppImg from '@assets/generated_images/sme_business_management_mobile_app.png';
+import walletImg from '@assets/generated_images/mobile_money_wallet_concept.png';
 
 export default function Home() {
   const skills = [
@@ -43,14 +47,14 @@ export default function Home() {
       description: "Proposed M-PESA enhancement enabling purpose-specific mini-wallets with configurable lock mechanisms and withdrawal conditions for disciplined financial planning and savings goals.",
       tags: ["React", "Node.js", "M-Pesa API", "Firebase", "Supabase"],
       link: "https://tengapesa.onrender.com",
-      imageUrl: dashboardImg
+      imageUrl: walletImg
     },
     {
       title: "BizLens SME Management Platform",
       description: "Comprehensive React Native business management solution helping SME owners manage accounting, inventory, and operations more efficiently and accurately with mobile-first design.",
       tags: ["React Native", "Firebase", "Computer Vision", "Python", "ML"],
       link: "#",
-      imageUrl: dashboardImg
+      imageUrl: smeAppImg
     },
     {
       title: "SecureAid",
@@ -71,14 +75,14 @@ export default function Home() {
       description: "Comprehensive student platform consolidating study materials, job opportunities, event management, and career development tools. Features gamification elements enhancing engagement and collaborative learning spaces.",
       tags: ["React", "Node.js", "MongoDB", "Gamification"],
       link: "#",
-      imageUrl: dashboardImg
+      imageUrl: studentPlatformImg
     },
     {
       title: "Kenyan Food Price Analysis",
       description: "Award-winning longitudinal study (2006-2024) developing econometric models identifying price volatility drivers. Applied ARIMA and VAR methodologies producing policy recommendations.",
       tags: ["R", "LaTeX", "Statistical Modeling", "ARIMA", "Data Viz"],
       link: "#",
-      imageUrl: dashboardImg
+      imageUrl: foodPriceImg
     }
   ];
 
