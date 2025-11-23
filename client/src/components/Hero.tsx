@@ -33,11 +33,15 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display leading-tight mb-6">
-            Building <span className="text-gradient-primary">Digital Solutions</span> with Data & Code
+            Hi, I'm <span className="text-gradient-primary">Alfred Mulinge Maweu</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
-            I am Alfred Mulinge Maweu, a Data Scientist & Full Stack Developer turning complex data into actionable insights and building robust web applications.
+          <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
+            Data Analyst | AI & Innovation Consultant | Full-Stack Developer
+          </h2>
+          
+          <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
+            Innovative data analyst and full-stack developer building enterprise-grade applications and delivering data-driven strategic insights. Specialized in productivity analytics, AI-powered platforms, and blockchain solutions.
           </p>
           
           <div className="flex flex-wrap gap-4">
@@ -67,7 +71,7 @@ export default function Hero() {
               </div>
               <div className="space-y-4">
                 <Card icon={<Code className="h-6 w-6 text-cyan-400" />} title="Full Stack Dev" delay={0.5} />
-                <Card icon={<div className="h-6 w-6 rounded-full bg-green-400/20 flex items-center justify-center text-green-400 font-bold text-xs">ML</div>} title="Machine Learning" delay={0.6} />
+                <Card icon={<div className="h-6 w-6 rounded-full bg-green-400/20 flex items-center justify-center text-green-400 font-bold text-xs">AI</div>} title="Artificial Intelligence" delay={0.6} />
               </div>
             </div>
           </div>
