@@ -218,9 +218,27 @@ export default function Home() {
         <Contact />
       </Section>
 
-  <div className="py-6 border-t border-border text-center text-muted-foreground text-sm">
-    &copy; {new Date().getFullYear()} Alfred Mulinge Maweu. All rights reserved.
-  </div>
+  <footer className="py-8 border-t border-border bg-background">
+    <div className="container mx-auto px-6">
+      <div className="flex flex-wrap justify-center gap-4 mb-6">
+        {socialLinks.map(({ icon: Icon, href, label }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={label}
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-secondary/40 text-muted-foreground hover:bg-primary hover:text-white transition-all duration-300 hover:-translate-y-1 border border-border/40"
+          >
+            <Icon className="w-5 h-5" />
+          </a>
+        ))}
+      </div>
+      <p className="text-center text-muted-foreground text-sm">
+        &copy; {new Date().getFullYear()} Alfred Mulinge Maweu. All rights reserved.
+      </p>
+    </div>
+  </footer>
     </div>
   );
 }

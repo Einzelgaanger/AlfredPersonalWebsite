@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { contactChannels, references, socialLinks } from "@/data/contactLinks";
+import { contactChannels, references } from "@/data/contactLinks";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -73,15 +73,9 @@ export default function Contact() {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3 pt-6">
-          {socialLinks.map(({ icon: Icon, href, label }) => (
-            <SocialButton key={label} icon={<Icon className="w-4 h-4" />} href={href} label={label} />
-          ))}
-        </div>
-
         <div className="mt-10 space-y-4">
-          <h4 className="text-xl font-display font-semibold">References</h4>
-          <div className="grid sm:grid-cols-2 gap-6 justify-items-center">
+          <h4 className="text-xl font-display font-semibold text-center">References</h4>
+          <div className="grid sm:grid-cols-2 gap-8 justify-center max-w-2xl mx-auto">
             {references.map(({ name, role, email, phone, icon: Icon }) => (
               <ReferenceCard
                 key={name}
@@ -228,16 +222,3 @@ function ReferenceCard({
   );
 }
 
-function SocialButton({ icon, href, label }: { icon: React.ReactNode, href: string; label: string }) {
-  return (
-    <a 
-      href={href} 
-      target="_blank"
-      rel="noreferrer"
-      aria-label={label}
-      className="w-12 h-12 flex items-center justify-center rounded-full bg-secondary/40 text-muted-foreground hover:bg-primary hover:text-white transition-all duration-300 hover:-translate-y-1 border border-border/40"
-    >
-      {icon}
-    </a>
-  );
-}
