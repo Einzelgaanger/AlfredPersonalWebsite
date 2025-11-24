@@ -81,7 +81,7 @@ export default function Contact() {
 
         <div className="mt-10 space-y-4">
           <h4 className="text-xl font-display font-semibold">References</h4>
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 justify-items-center">
             {references.map(({ name, role, email, phone, icon: Icon }) => (
               <ReferenceCard
                 key={name}
@@ -208,7 +208,7 @@ function ReferenceCard({
   phone: string;
 }) {
   return (
-    <div className="p-5 rounded-2xl border border-white/5 bg-background/30">
+    <div className="p-5 rounded-2xl border border-white/5 bg-background/30 w-full max-w-sm mx-auto">
       <div className="flex items-center gap-4">
         <div className="p-3 rounded-full bg-primary/10 text-primary">{icon}</div>
         <div>
