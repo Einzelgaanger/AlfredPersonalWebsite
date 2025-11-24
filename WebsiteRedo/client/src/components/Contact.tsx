@@ -75,7 +75,7 @@ export default function Contact() {
 
         <div className="mt-10 space-y-4">
           <h4 className="text-xl font-display font-semibold text-center">References</h4>
-          <div className="flex flex-wrap justify-center gap-8 max-w-3xl mx-auto">
+          <div className="flex flex-wrap justify-center items-start gap-8 px-4">
             {references.map(({ name, role, email, phone, icon: Icon }) => (
               <ReferenceCard
                 key={name}
@@ -202,7 +202,7 @@ function ReferenceCard({
   phone: string;
 }) {
   return (
-    <div className="p-5 rounded-2xl border border-white/5 bg-background/30 w-full max-w-sm mx-auto">
+    <div className="p-5 rounded-2xl border border-white/5 bg-background/30 w-full sm:w-auto max-w-sm">
       <div className="flex items-center gap-4">
         <div className="p-3 rounded-full bg-primary/10 text-primary">{icon}</div>
         <div>
