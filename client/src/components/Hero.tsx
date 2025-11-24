@@ -1,106 +1,110 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Database, Code, BarChart } from "lucide-react";
+import { ArrowRight, Database, Code, BarChart, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portraitImg from '@assets/generated_images/professional_portrait_background_data_science.png';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={portraitImg} 
-          alt="Data Science Background" 
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/95 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+    <section id="home" className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-background" />
+        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] opacity-50" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] opacity-30" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Available for new projects
-          </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display leading-tight mb-6">
-            Hi, I'm <span className="text-gradient-primary">Alfred Mulinge Maweu</span>
-          </h1>
-          
-          <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 font-mono">
-            Data Analyst | AI & Innovation Consultant | Full-Stack Developer
-          </h2>
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="p-6 bg-secondary/20 border-l-4 border-primary rounded-r-lg backdrop-blur-sm mb-8 max-w-xl"
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="order-2 lg:order-1"
           >
-            <h3 className="text-lg font-bold mb-2 text-foreground">Professional Summary</h3>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Available for new projects
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-display leading-tight mb-6">
+              Hi, I'm <span className="text-gradient-primary">Alfred Mulinge Maweu</span>
+            </h1>
+            
+            <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6 font-mono">
+              Data Analyst | AI & Innovation Consultant | Full-Stack Developer
+            </h2>
+            
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
               Innovative data analyst, AI consultant, and full-stack developer with extensive experience building enterprise-grade applications and delivering data-driven strategic insights. Specialized in productivity analytics, AI-powered platforms, blockchain solutions, and quantitative research.
             </p>
-          </motion.div>
-          
-          <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12 text-base shadow-lg shadow-primary/25 transition-all hover:scale-105" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth'})}>
-              View My Work <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-primary/20 hover:bg-primary/10 text-foreground rounded-full px-8 h-12 text-base" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'})}>
-              Contact Me
-            </Button>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="hidden lg:block relative"
-        >
-          <div className="relative w-full aspect-square max-w-md mx-auto">
-            {/* Abstract decorative elements */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary to-cyan-400 rounded-full blur-3xl opacity-20 animate-pulse" />
             
-            <div className="relative z-10 grid grid-cols-2 gap-4 p-4">
-              <div className="space-y-4 mt-8">
-                <Card icon={<Database className="h-6 w-6 text-primary" />} title="Data Engineering" delay={0.3} />
-                <Card icon={<BarChart className="h-6 w-6 text-purple-400" />} title="Analytics" delay={0.4} />
-              </div>
-              <div className="space-y-4">
-                <Card icon={<Code className="h-6 w-6 text-cyan-400" />} title="Full Stack Dev" delay={0.5} />
-                <Card icon={<div className="h-6 w-6 rounded-full bg-green-400/20 flex items-center justify-center text-green-400 font-bold text-xs">AI</div>} title="Artificial Intelligence" delay={0.6} />
-              </div>
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12 text-base shadow-lg shadow-primary/25 transition-all hover:scale-105" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth'})}>
+                View My Work <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="lg" className="border-primary/20 hover:bg-primary/10 text-foreground rounded-full px-8 h-12 text-base" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth'})}>
+                Contact Me
+              </Button>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Profile Image & Visuals */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="order-1 lg:order-2 relative flex justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-md aspect-square">
+              {/* Decorative Rings */}
+              <div className="absolute inset-0 border border-primary/20 rounded-full animate-[spin_10s_linear_infinite]" />
+              <div className="absolute inset-4 border border-dashed border-white/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+              
+              {/* Profile Image Container - REPLACE SRC WITH YOUR IMAGE */}
+              <div className="absolute inset-8 rounded-full overflow-hidden border-4 border-background shadow-2xl shadow-primary/20 group">
+                <img 
+                  src={portraitImg} 
+                  alt="Alfred Mulinge Maweu" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Overlay for hover */}
+                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+
+              {/* Floating Skill Cards */}
+              <FloatingCard icon={<Database className="text-primary" />} label="Data Science" className="top-0 left-0 -translate-x-1/4 translate-y-1/2" delay={0.4} />
+              <FloatingCard icon={<Code className="text-cyan-400" />} label="Full Stack" className="bottom-10 right-0 translate-x-1/4" delay={0.5} />
+              <FloatingCard icon={<BarChart className="text-purple-400" />} label="AI Analytics" className="top-1/4 right-[-20px]" delay={0.6} />
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
 }
 
-function Card({ icon, title, delay }: { icon: React.ReactNode, title: string, delay: number }) {
+function FloatingCard({ icon, label, className, delay }: { icon: React.ReactNode, label: string, className?: string, delay: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      className="bg-card/50 backdrop-blur-sm border border-white/5 p-6 rounded-2xl shadow-xl hover:border-primary/30 transition-colors group"
+      className={`absolute bg-card/80 backdrop-blur-md border border-white/10 px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 ${className}`}
     >
-      <div className="mb-4 p-3 bg-background/50 rounded-xl w-fit group-hover:bg-primary/10 transition-colors">
-        {icon}
+      <div className="p-2 bg-background/50 rounded-lg text-primary">
+        {/* Wrap in a styled div instead of cloning to avoid type issues */}
+        <div className="w-5 h-5 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full">
+          {icon}
+        </div>
       </div>
-      <h3 className="font-display font-bold text-lg text-foreground">{title}</h3>
+      <span className="font-display font-bold text-sm">{label}</span>
     </motion.div>
   );
 }

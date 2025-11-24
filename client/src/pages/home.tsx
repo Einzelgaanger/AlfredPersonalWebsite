@@ -10,10 +10,10 @@ import { GraduationCap, Brain, Trophy, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Import generated images for projects
-import aiNetworkImg from '@assets/generated_images/abstract_ai_network_visualization.png';
-import blockchainImg from '@assets/generated_images/blockchain_technology_concept.png';
-import dashboardImg from '@assets/generated_images/data_analytics_dashboard_concept.png';
-import portraitImg from '@assets/generated_images/professional_portrait_background_data_science.png';
+import secureAidImg from '@assets/generated_images/secureaid_ngo_transparency_platform.png';
+import transparentTrackImg from '@assets/generated_images/transparenttrack_blockchain_visualization.png';
+import aiCommercializationImg from '@assets/generated_images/ai_commercialization_analytics_dashboard.png';
+import gpt2Img from '@assets/generated_images/gpt2xlut_ai_architecture.png';
 import foodPriceImg from '@assets/generated_images/food_price_econometrics_graph.png';
 import studentPlatformImg from '@assets/generated_images/student_education_platform_ui.png';
 import smeAppImg from '@assets/generated_images/sme_business_management_mobile_app.png';
@@ -29,18 +29,32 @@ export default function Home() {
 
   const projects = [
     {
-      title: "GPT2xLUT -- Continuous Learning AI",
-      description: "Innovative language model combining GPT-2 with dynamic Lookup Table augmentation enabling real-time learning without full retraining. Features persistent knowledge storage via Supabase, user-specific personalization, multi-tenant architecture, and production-ready infrastructure.",
-      tags: ["Python", "GPT-2", "Machine Learning", "Supabase", "AI"],
+      title: "SecureAid",
+      description: "Digital solution mitigating corruption in NGO fund disbursements through transparent tracking and accountability mechanisms.",
+      tags: ["Blockchain", "React", "Django", "Transparency"],
+      link: "https://secureaid.online",
+      imageUrl: secureAidImg
+    },
+    {
+      title: "TransparentTrack NGO System",
+      description: "End-to-end blockchain solution ensuring transparent fund disbursement for NGOs. Implemented with Django backend, React frontend, and Hyperledger Fabric blockchain infrastructure.",
+      tags: ["Django", "React", "Hyperledger", "Blockchain"],
       link: "#",
-      imageUrl: aiNetworkImg
+      imageUrl: transparentTrackImg
     },
     {
       title: "AI Research Commercialization Tool",
       description: "Intelligent platform evaluating research commercialization potential using configurable metrics framework. Features default and custom scoring criteria with user-defined weightages, generates comprehensive analytics reports identifying strengths and market readiness scores.",
-      tags: ["Python", "Machine Learning", "React", "Node.js", "Analytics"],
+      tags: ["Python", "Machine Learning", "React", "Node.js"],
       link: "#",
-      imageUrl: dashboardImg
+      imageUrl: aiCommercializationImg
+    },
+    {
+      title: "GPT2xLUT -- Continuous Learning AI",
+      description: "Innovative language model combining GPT-2 with dynamic Lookup Table augmentation enabling real-time learning without full retraining. Features persistent knowledge storage via Supabase, user-specific personalization, multi-tenant architecture, and production-ready infrastructure.",
+      tags: ["Python", "GPT-2", "Machine Learning", "Supabase"],
+      link: "#",
+      imageUrl: gpt2Img
     },
     {
       title: "TengaPesa Platform",
@@ -55,20 +69,6 @@ export default function Home() {
       tags: ["React Native", "Firebase", "Computer Vision", "Python", "ML"],
       link: "#",
       imageUrl: smeAppImg
-    },
-    {
-      title: "SecureAid",
-      description: "Digital solution mitigating corruption in NGO fund disbursements through transparent tracking and accountability mechanisms.",
-      tags: ["Blockchain", "React", "Django", "Transparency"],
-      link: "https://secureaid.online",
-      imageUrl: blockchainImg
-    },
-    {
-      title: "TransparentTrack NGO System",
-      description: "End-to-end blockchain solution ensuring transparent fund disbursement for NGOs. Implemented with Django backend, React frontend, and Hyperledger Fabric blockchain infrastructure.",
-      tags: ["Django", "React", "Hyperledger", "Blockchain", "PostgreSQL"],
-      link: "#",
-      imageUrl: blockchainImg
     },
     {
       title: "Bunifu Student Platform",
