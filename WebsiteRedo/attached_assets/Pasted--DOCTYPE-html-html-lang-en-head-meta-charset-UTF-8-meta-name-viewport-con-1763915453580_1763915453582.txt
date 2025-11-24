@@ -2638,7 +2638,7 @@
             <div class="footer-content">
                 <div class="social-links">
                     <!-- Professional Networks -->
-                    <a href="https://alfredmulinge.onrender.com" class="social-link" title="Website" style="color: var(--primary);">
+                    <a href="https://mralfred.onrender.com" class="social-link" title="Website" style="color: var(--primary);">
                         <i class="fas fa-globe"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/alfred-mulinge-7586582a9" class="social-link linkedin" title="LinkedIn">

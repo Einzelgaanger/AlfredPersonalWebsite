@@ -61,7 +61,7 @@ export const references = [
 ];
 
 export const socialLinks = [
-  { label: "Website", href: "https://alfredmulinge.onrender.com", icon: Globe },
+  { label: "Website", href: "https://mralfred.onrender.com", icon: Globe },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/alfred-mulinge-7586582a9", icon: Linkedin },
   { label: "GitHub", href: "https://github.com/Einzelgaanger", icon: Github },
   { label: "Stack Overflow", href: "https://stackoverflow.com/users/30068579/alfred-mulinge?tab=profile", icon: Layers },
