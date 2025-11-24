@@ -6,8 +6,14 @@ import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import Contact from "@/components/Contact";
-import { GraduationCap, Brain, Trophy, Download } from "lucide-react";
+import {
+  GraduationCap,
+  Brain,
+  Trophy,
+  Download,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { socialLinks } from "@/data/contactLinks";
 
 // Import generated images for projects
 import secureAidImg from '@assets/generated_images/secureaid_ngo_transparency_platform.png';
@@ -29,6 +35,20 @@ export default function Home() {
 
   const projects = [
     {
+      title: "VGG Holdings Portal",
+      description: "Enterprise multi-company management platform with AI-powered assistant, unified analytics dashboards, workflow automation, and deep API integrations for SeamlessHR and Microsoft 365 data.",
+      tags: ["React", "TypeScript", "Supabase", "AI Assistant", "Automation"],
+      link: "#",
+      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80"
+    },
+    {
+      title: "Fund Manager Portal",
+      description: "Full-stack ESCP Network platform managing 260+ fund manager profiles, survey history, automated workflows, community content, and real-time insights using Supabase Realtime.",
+      tags: ["React", "TypeScript", "Supabase", "Realtime", "PostgreSQL"],
+      link: "#",
+      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
+    },
+    {
       title: "SecureAid",
       description: "Digital solution mitigating corruption in NGO fund disbursements through transparent tracking and accountability mechanisms.",
       tags: ["Blockchain", "React", "Django", "Transparency"],
@@ -44,44 +64,51 @@ export default function Home() {
     },
     {
       title: "AI Research Commercialization Tool",
-      description: "Intelligent platform evaluating research commercialization potential using configurable metrics framework. Features default and custom scoring criteria with user-defined weightages, generates comprehensive analytics reports identifying strengths and market readiness scores.",
+      description: "Intelligent platform evaluating research commercialization potential using configurable metrics framework with weighted scoring and automated analytics briefings.",
       tags: ["Python", "Machine Learning", "React", "Node.js"],
       link: "#",
       imageUrl: aiCommercializationImg
     },
     {
       title: "GPT2xLUT -- Continuous Learning AI",
-      description: "Innovative language model combining GPT-2 with dynamic Lookup Table augmentation enabling real-time learning without full retraining. Features persistent knowledge storage via Supabase, user-specific personalization, multi-tenant architecture, and production-ready infrastructure.",
+      description: "Continuous-learning GPT-2 platform combining LUT augmentation with Supabase persistence for real-time personalization, multi-tenant workspaces, and API access.",
       tags: ["Python", "GPT-2", "Machine Learning", "Supabase"],
       link: "#",
       imageUrl: gpt2Img
     },
     {
+      title: "Bunifu Student Platform",
+      description: "Comprehensive student platform consolidating study materials, job opportunities, events, and gamified growth paths for career development.",
+      tags: ["React", "Node.js", "MongoDB", "Gamification"],
+      link: "#",
+      imageUrl: studentPlatformImg
+    },
+    {
       title: "TengaPesa Platform",
-      description: "Proposed M-PESA enhancement enabling purpose-specific mini-wallets with configurable lock mechanisms and withdrawal conditions for disciplined financial planning and savings goals.",
+      description: "Proposed M-PESA enhancement enabling purpose-specific mini-wallets with configurable lock mechanisms and withdrawal conditions for disciplined financial planning.",
       tags: ["React", "Node.js", "M-Pesa API", "Firebase", "Supabase"],
       link: "https://tengapesa.onrender.com",
       imageUrl: walletImg
     },
     {
       title: "BizLens SME Management Platform",
-      description: "Comprehensive React Native business management solution helping SME owners manage accounting, inventory, and operations more efficiently and accurately with mobile-first design.",
+      description: "React Native solution helping SME owners manage accounting, inventory, and operations with mobile-first dashboards and computer-vision powered insights.",
       tags: ["React Native", "Firebase", "Computer Vision", "Python", "ML"],
       link: "#",
       imageUrl: smeAppImg
     },
     {
-      title: "Bunifu Student Platform",
-      description: "Comprehensive student platform consolidating study materials, job opportunities, event management, and career development tools. Features gamification elements enhancing engagement and collaborative learning spaces.",
-      tags: ["React", "Node.js", "MongoDB", "Gamification"],
-      link: "#",
-      imageUrl: studentPlatformImg
+      title: "MemVault Platform",
+      description: "Integrated journaling, event planning, and photo archiving application blending Google Calendar and Photos experiences with privacy-first design.",
+      tags: ["React", "Node.js", "MongoDB", "Firebase"],
+      link: "https://memvault.onrender.com",
+      imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80"
     },
     {
       title: "Kenyan Food Price Analysis",
-      description: "Award-winning longitudinal study (2006-2024) developing econometric models identifying price volatility drivers. Applied ARIMA and VAR methodologies producing policy recommendations.",
+      description: "Award-winning longitudinal econometric analysis (2006-2024) identifying volatility drivers with ARIMA and VAR models, delivered via R and LaTeX.",
       tags: ["R", "LaTeX", "Statistical Modeling", "ARIMA", "Data Viz"],
-      link: "#",
+      link: "/iLab.pdf",
       imageUrl: foodPriceImg
     }
   ];
@@ -114,8 +141,10 @@ export default function Home() {
               </p>
               
               <div className="mt-8 relative z-10">
-                <Button className="gap-2">
-                  <Download className="w-4 h-4" /> Download Full Resume
+                <Button asChild className="gap-2">
+                  <a href="/Alfred-Mulinge-Resume.pdf" download target="_blank" rel="noreferrer">
+                    <Download className="w-4 h-4" /> Download Full Resume
+                  </a>
                 </Button>
               </div>
             </div>
@@ -189,11 +218,9 @@ export default function Home() {
         <Contact />
       </Section>
 
-      <footer className="py-8 border-t border-border bg-background text-center text-muted-foreground">
-        <div className="container mx-auto px-6">
-          <p>&copy; {new Date().getFullYear()} Alfred Mulinge Maweu. All rights reserved.</p>
-        </div>
-      </footer>
+  <div className="py-6 border-t border-border text-center text-muted-foreground text-sm">
+    &copy; {new Date().getFullYear()} Alfred Mulinge Maweu. All rights reserved.
+  </div>
     </div>
   );
 }

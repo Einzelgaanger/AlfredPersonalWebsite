@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Database, Code, BarChart, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portraitImg from '@assets/generated_images/professional_portrait_background_data_science.png';
+import portraitImg from "@assets/myprofile.jpg";
 
 export default function Hero() {
   return (
@@ -79,7 +79,7 @@ export default function Hero() {
 
               {/* Floating Skill Cards */}
               <FloatingCard icon={<Database className="text-primary" />} label="Data Science" className="top-0 left-0 -translate-x-1/4 translate-y-1/2" delay={0.4} />
-              <FloatingCard icon={<Code className="text-cyan-400" />} label="Full Stack" className="bottom-10 right-0 translate-x-1/4" delay={0.5} />
+              <FloatingCard icon={<Code className="text-cyan-400" />} label="Full Stack" className="bottom-10 right-8 translate-x-0" delay={0.5} />
               <FloatingCard icon={<BarChart className="text-purple-400" />} label="AI Analytics" className="top-1/4 right-[-20px]" delay={0.6} />
             </div>
           </motion.div>

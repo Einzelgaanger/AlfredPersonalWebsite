@@ -40,9 +40,8 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold font-display tracking-tighter flex items-center gap-2 group cursor-pointer no-underline">
-            <span className="text-primary group-hover:scale-110 transition-transform duration-300">♦</span>
-            <span className="text-foreground group-hover:text-primary transition-colors duration-300">Alfred.dev</span>
+        <Link href="/" className="text-2xl font-bold font-display tracking-tight text-foreground group cursor-pointer no-underline">
+          <span className="transition-colors duration-300 group-hover:text-primary">Einzelgänger</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -57,8 +56,14 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </button>
           ))}
-          <Button size="sm" className="ml-4 bg-primary hover:bg-primary/90 text-white font-medium rounded-full px-6">
-            Download CV
+          <Button
+            asChild
+            size="sm"
+            className="ml-4 bg-primary hover:bg-primary/90 text-white font-medium rounded-full px-6"
+          >
+            <a href="/Alfred-Mulinge-Resume.pdf" download target="_blank" rel="noreferrer">
+              Download CV
+            </a>
           </Button>
         </nav>
 
@@ -90,7 +95,11 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <Button className="w-full mt-4 bg-primary text-white">Download CV</Button>
+              <Button asChild className="w-full mt-4 bg-primary text-white">
+                <a href="/Alfred-Mulinge-Resume.pdf" download target="_blank" rel="noreferrer">
+                  Download CV
+                </a>
+              </Button>
             </nav>
           </motion.div>
         )}
