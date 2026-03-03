@@ -5,7 +5,13 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { metaImagesPlugin } from "./vite-plugin-meta-images";
 
+// Unique build id so we can confirm new deploys are live (shown in footer)
+const BUILD_ID = `build-${Date.now()}`;
+
 export default defineConfig({
+  define: {
+    __BUILD_ID__: JSON.stringify(BUILD_ID),
+  },
   plugins: [
     react(),
     runtimeErrorOverlay(),

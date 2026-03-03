@@ -231,8 +231,11 @@ export default function Home() {
         <Contact />
       </Section>
 
-  <div className="py-6 border-t border-border/60 text-center text-muted-foreground text-sm font-mono">
-    &copy; {new Date().getFullYear()} Alfred Mulinge Maweu. All rights reserved.
+  <div className="py-6 border-t border-border/60 text-center text-muted-foreground text-sm font-mono space-y-1">
+    <p>&copy; {new Date().getFullYear()} Alfred Mulinge Maweu. All rights reserved.</p>
+    <p className="text-xs opacity-70" title="If this number never changes after deploy, your host may be serving cached or old build.">
+      Build: {(typeof __BUILD_ID__ !== "undefined" ? __BUILD_ID__ : "dev")}
+    </p>
   </div>
     </div>
   );

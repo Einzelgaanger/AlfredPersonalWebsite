@@ -1,0 +1,9 @@
+# Render Blueprint - use this so deploys run a fresh build and start the Node server
+services:
+  - type: web
+    name: alfred-portfolio
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    # Ensure Render uses the built output (server runs from repo root, serves dist/public)
+    healthCheckPath: /
